@@ -1,0 +1,22 @@
+{
+  "name": "docker-tutorial-backend",
+  "version": "1.0.0",
+  "description": "Basic backend application to introduce Docker.",
+  "scripts": {
+    "start": "ts-node ./src/index.ts"
+  },
+  "author": "Kiss, Áron",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.16.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
