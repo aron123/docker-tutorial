@@ -43,7 +43,7 @@ async function main() {
                 await connection.execute('INSERT INTO todo (description) VALUES (?)', [req.query.description]);
                 res.status(200).send();
             } catch (err) {
-                res.status(400).send();
+                res.status(500).send();
             }
         });
 
