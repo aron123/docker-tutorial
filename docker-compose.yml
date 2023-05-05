@@ -1,1 +1,36 @@
+volumes:
+  # docker volume create todo-data
+  todo-data:
+    external: true
 
+services:
+  database:
+    container_name: todo-database
+    image: mysql:8.0.33-debian
+    environment:
+      MYSQL_DATABASE: docker_tutorial
+      MYSQL_ROOT_PASSWORD: Porcica1.
+    volumes:
+      - "todo-data:/var/lib/mysql"
+
+  backend:
+    container_name: todo-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - DB_HOST=todo-database
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=Porcica1.
+      - DB_DATABASE=docker_tutorial
+    ports:
+      - 3000:3000
+
+  frontend:
+    container_name: todo-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80

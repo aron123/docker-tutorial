@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Basic backend application to introduce Docker.",
   "scripts": {
-    "start": "ts-node ./src/index.ts"
+    "start": "ts-node ./src/index.ts",
+    "build": "tsc --build"
   },
   "author": "Kiss, Áron",
   "license": "MIT",
