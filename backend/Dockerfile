@@ -1,3 +1,4 @@
+# create a container for building the project
 FROM node:lts-hydrogen AS builder
  
 WORKDIR /usr/app
@@ -6,7 +7,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-
+# create a container for running the project
 FROM node:lts-hydrogen AS deployment
 
 WORKDIR /usr/app

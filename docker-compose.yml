@@ -1,5 +1,4 @@
 volumes:
-  # docker volume create todo-data
   todo-data:
     external: true
 
@@ -8,8 +7,8 @@ services:
     container_name: todo-database
     image: mysql:8.0.33-debian
     environment:
-      MYSQL_DATABASE: docker_tutorial
-      MYSQL_ROOT_PASSWORD: Porcica1.
+      - MYSQL_DATABASE=docker_tutorial
+      - MYSQL_ROOT_PASSWORD=Porcica1.
     volumes:
       - "todo-data:/var/lib/mysql"
 
